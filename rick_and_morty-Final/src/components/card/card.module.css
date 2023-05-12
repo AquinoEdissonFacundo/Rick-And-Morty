@@ -1,0 +1,15 @@
+
+body {
+
+ background-color:#b5e48c 
+ 
+  }
+  
+.contenedor{
+  background-color: #76c893;
+  width: 300px;
+  margin: 50px;
+  border-radius: 20px;
+  padding: 10px;  
+  box-shadow: 10px 10px 1px 1px rgba(57, 72, 38, 0.14);
+} 

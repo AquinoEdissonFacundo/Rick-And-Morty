@@ -1,0 +1,12 @@
+
+.cardContainer{
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex: 1 1 21%;
+    margin-bottom: 20px;
+    color: blanchedalmond;
+  
+  }
