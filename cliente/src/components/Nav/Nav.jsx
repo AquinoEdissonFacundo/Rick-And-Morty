@@ -14,7 +14,7 @@ const Nav = (props) =>{
         <button>
             <Link  to='/home'>home</Link>
         </button>
-        <button>log out</button>
+      
         </div>
     )
 }

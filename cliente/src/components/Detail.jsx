@@ -8,7 +8,7 @@ const Detail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacter(data);
@@ -22,18 +22,15 @@ const Detail = () => {
 
   return (
     <div>
-      <div>
-        <h1>{character?.name}</h1>
-        <h2>{character?.status}</h2>
-        <h2>{character?.species}</h2>
-        <h2>{character?.gender}</h2>
-        <h2>{character?.origin?.name}</h2>
-      </div>
-      <div>
-      <img src={character?.image} alt={character?.name} />
-      </div>
+    <h1>Detalles del personaje:</h1>
+      <p>Nombre: {character.name}</p>
+      <p>Especie: {character.species}</p>
+      <p>Estado: {character.status}</p>
+      <p>Género: {character.gender}</p>
+      <p>Origen: {character.origin?.name}</p>
+      <img src={character.image} alt={character.name} />
     </div>
   );
 };
 
-export default Detail;
+export default Detail; 
