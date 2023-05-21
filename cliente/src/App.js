@@ -18,7 +18,7 @@ function App() {
       console.log (characters)
  
       function onSearch(id) {
-         axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
       if (data.name) {
          // Buscar si el personaje ya está en el array
          const characterExists = characters.find(char => char.id === data.id);
