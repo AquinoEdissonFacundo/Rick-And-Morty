@@ -45,12 +45,19 @@ function App() {
       const [access, setAccess] = useState(false);
      
       
-      function login(userData) {
-         if (userData.password === PASSWORD && userData.email === EMAIL) {
-            setAccess(true);
-            navigate('/home');
-         }
+      const login = (userData) => {
+         const { email, password } = userData;
+         const URL = 'http://localhost:3001/rickandmorty/login/';
+         axios(URL + `?email=${email}&password=${password}`)
+         .then(({ data }) => {
+            const { access } = data;
+            setAccess(access);
+            access && navigate('/home');
+         });
       }
+
+
+
       useEffect(() => {
          !access && navigate('/');
       }, [access]);
