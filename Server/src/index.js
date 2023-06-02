@@ -1,27 +1,9 @@
-const express = require('express');
-const server = express();
-const PORT = 3001
-const morgan = require('morgan');
-const router = require('./routes/index')
+const app = require('./app') //esta es la config de nuestro server
+const {conn}=require ('./DB_connection')// esta es la config de nuestro DB
 
-server.use(express.json());
-server.use(morgan('dev'));
+const PORT = process.env.PORT || 3001;
 
-server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    res.header(
-        'Access-Control-Allow-Methods',
-        'GET, POST, OPTIONS, PUT, DELETE'
-    );
-    next();
-});
-
-server.use('/rickandmorty', router);
-server.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
-
-
+app.listen(PORT,async ()=>{
+    console.log(`server raised in port : http://localhost:${PORT}`)
+   await conn.sync({force:true}) 
+})

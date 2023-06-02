@@ -16,7 +16,7 @@ import style from './cards.module.css'
                      status={character.status}
                      species={character.species}
                      gender={character.gender}
-                     origin={character.origin.name}
+                     origin={character.origin}
                      image={character.image}
                      onClose={onClose}
                   />
